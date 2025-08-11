@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  /* transform: translateZ(0); */
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: #3a3a3a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.preload {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #77b3d4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 3s ease;
+  /* transition: opacity 3s ease 4s; */
+}
+
+.preload h3 {
+  position: absolute;
+  top: 80%;
+  transform: translateY(-80%);
+  color: white;
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+.preload-finish {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.airplane {
+  height: 250px;
+  /* width: 50%;
+  height: 50%; */
+  -webkit-animation: airplane 1s ease infinite alternate;
+  animation: airplane 1s ease infinite alternate;
+}
+
+.cloud1,
+.cloud2,
+.cloud3 {
+  height: 100px;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+
+.cloud1 {
+  top: 25%;
+  transform: translate(100%, -25%);
+  -webkit-animation: clouds 3s ease infinite;
+  animation: clouds 3s ease infinite;
+}
+
+.cloud2 {
+  top: 50%;
+  transform: translate(100%, -50%);
+  -webkit-animation: clouds 3s ease infinite 2s;
+  animation: clouds 3s ease infinite 2s;
+}
+
+.cloud3 {
+  top: 75%;
+  transform: translate(100%, -75%);
+  -webkit-animation: clouds 3s ease infinite 1.5s;
+  animation: clouds 3s ease infinite 1.5s;
+}
+
+@-webkit-keyframes airplane {
+  from {
+      transform: translateY(0px);
+  }
+
+  to {
+      transform: translateY(50px);
+  }
+}
+
+@keyframes airplane {
+  from {
+      transform: translateY(0px);
+  }
+
+  to {
+      transform: translateY(50px);
+  }
+}
+
+@-webkit-keyframes clouds {
+  from {
+      right: 0%;
+  }
+
+  to {
+      right: 130%;
+  }
+}
+
+@keyframes clouds {
+  from {
+      right: 0%;
+  }
+
+  to {
+      right: 130%;
+  }
+}
+
+#inputWindow {
+  width: 20%;
+  height: 70%;
+  display: DISABLED-none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 100; */
+  background-color: GhostWhite;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px black;
+}
+
+#inputFrame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 2px goldenrod;
+}
+
+#inputForm input[type="text"]:focus {
+  background-color: #ffe;
+  outline: none;
+}
+
+#inputForm input[type="text"]:hover {
+  background-color: #ffe;
+  outline: none;
+}
+
+#inputButtonCanc {
+  width: 65px;
+  background-color: #f44336;
+  color: White;
+  border: 2px solid transparent;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#inputButtonCanc:hover {
+  background-color: GhostWhite;
+  color: Black;
+  border: 2px solid #f44336;
+}
+
+#inputButtonOk {
+  width: 65px;
+  background-color: #4caf50;
+  color: White;
+  border: 2px solid transparent;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#inputButtonOk:hover {
+  background-color: GhostWhite;
+  color: Black;
+  border: 2px solid #4caf50;
+}
+
+#inputUl1 {
+  list-style-type: none;
+  padding-left: 0px;
+  padding-right: 0px;
+  line-height: 150%;
+}
+
+#inputUl2 {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#expWindow {
+  display: none;
+  display: DISABLED-grid;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  border: DISABLED-1px solid red;
+}
+
+#div1,
+#div3 {
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 6px solid transparent;
+}
+
+#div1:hover {
+  border: DISABLED-3px solid green;
+}
+
+#div3:hover {
+  border: DISABLED-3px solid green;
+}
+
+#div2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: DISABLED-1px solid green;
+}
+
+#divFiller {
+  border: DISABLED-1px solid black;
+}
+
+#canvas1,
+#canvas2,
+#canvas3,
+#canvas4,
+#canvas1b,
+#canvas3b,
+#canvasFiller,
+#canvasFeedback {
+  display: flex;
+  border: DISABLED-1px solid yellowgreen;
+}
+
+#canvas2b,
+#canvas2c,
+#canvas4b,
+#canvas4c {
+  border: 3px solid transparent;
+}
+
+#impulse,
+#draw,
+#next {
+  width: 40px;
+}
